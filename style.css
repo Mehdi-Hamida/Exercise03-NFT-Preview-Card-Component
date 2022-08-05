@@ -1,0 +1,166 @@
+:root
+{
+    --background-color: #0d192b;
+    --card-background: #15273f;
+    --texts-color: #8bacda;
+    --more-visible-text: #00fff7;
+    --border-color: #2f415b;
+    --white: #fff;
+    --font: 'Outfit', sans-serif;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--texts-color);
+    background: var(--background-color);
+    font-family: var(--font);
+}
+
+.flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----- Card Body ----- */
+main.card-body
+{
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 330px;
+}
+
+/* ----- Card Image ----- */
+main.card-body .content-container .img-container
+{
+    position: relative;
+    height: 320px;
+    width: 100%;
+    background: url(./images/image-equilibrium.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden; /* This doesn't let overflow the scale of the ::after below */
+}
+
+main.card-body .content-container .img-container:hover::after
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: url(./images/icon-view.svg);
+    transform: scale(1.5); /* To make the eye image bigger */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 255, 247, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ----- Card Texts ----- */
+.texts-container h1
+{
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    color: var(--white);
+    font-weight: 500;
+    margin: 30px 0 15px;
+}
+
+.texts-container h1:hover
+{
+    color: var(--more-visible-text);
+    cursor: pointer;
+}
+
+.texts-container p.description
+{
+    color: var(--texts-color);
+    max-width: 90%;
+    line-height: 1.85rem;
+}
+
+.texts-container p.flex-row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 22.5px;
+}
+
+.texts-container p.flex-row span.cryptocurrency-value
+{
+    position: relative;
+    padding-left: 17.5px;
+    font-weight: 400;
+    color: var(--more-visible-text);
+}
+
+.texts-container p.flex-row span.limit-buying-time
+{
+    position: relative;
+    padding-left: 25px;
+    font-weight: 400;
+}
+
+.texts-container p.flex-row span.cryptocurrency-value::before,
+.texts-container p.flex-row span.limit-buying-time::before
+{
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.texts-container p.flex-row span.cryptocurrency-value::before
+{
+    content: url(./images/icon-ethereum.svg);
+}
+
+.texts-container p.flex-row span.limit-buying-time::before
+{
+    content: url(./images/icon-clock.svg);
+}
+
+.texts-container p.creator-attribution
+{
+    position: relative;
+    padding-left: 50px;
+    margin: 5px 0 5px;
+}
+
+.texts-container p.creator-attribution::before
+{
+    position: absolute;
+    content: "";
+    background: url(./images/image-avatar.png) no-repeat center;
+    background-size: cover;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    top: -7.5px;
+    left: 0;
+    height: 36px;
+    width: 36px;
+}
+
+.texts-container p.creator-attribution span.bold-text
+{
+    font-weight: 400;
+    color: var(--white);
+}
+
+.texts-container p.creator-attribution span.bold-text:hover
+{
+    cursor: pointer;
+    color: var(--more-visible-text);
+}
